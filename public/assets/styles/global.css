@@ -1,0 +1,258 @@
+@import "tailwindcss";
+
+/* ------------------ VARIABLES ------------------ */
+:root {
+  --font-primary: "Slussen";
+  --white: #efefef;
+  --white-transparent: hsla(0, 0%, 94%, 0);
+  --grey: #b0b0b0;
+  --grey-transparent: hsla(0, 0%, 69%, 0.035);
+  --black: #000;
+  --black-transparent: transparent;
+  --primary-color: #ff98a2;
+  --secondary-color: #000;
+  --pink: rgb(255, 152, 162);
+  --pink-transparent: rgba(255, 152, 162, 0.138);
+  --background: var(--black);
+  --foreground: var(--white);
+
+  --font-dark: #000;
+  --font-light: #efefef;
+  --btn-bg-pink: #ff98a2;
+  --btn-bg-white: #efefef;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: var(--pink);
+    --foreground: #ededed;
+  }
+}
+
+/* ------------------ FONT FACE ------------------ */
+@font-face {
+  font-family: "Slussen";
+  src: url("../fonts/slussen/Slussen-Condensed-Bold-TRIAL.otf")
+    format("opentype");
+
+  /* src: url("/assets/fonts/slussen/Slussen-Bold-TRIAL.otf") format("opentype"); */
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Slussen-ext";
+  src: url("../fonts/slussen/Slussen-Expanded-Bold-TRIAL.otf")
+    format("opentype");
+
+  /* src: url("/assets/fonts/slussen/Slussen-Bold-TRIAL.otf") format("opentype"); */
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Slussen-light";
+  src: url("../fonts/slussen/Slussen-Extended-Regular-TRIAL.otf")
+    format("opentype");
+
+  /* src: url("/assets/fonts/slussen/Slussen-Bold-TRIAL.otf") format("opentype"); */
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Slussen";
+  src: url("../fonts/slussen/Slussen-Condensed-Bold-TRIAL.otf")
+    format("opentype");
+
+  /* src: url("/assets/fonts/slussen/Slussen-Bold-TRIAL.otf") format("opentype"); */
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Slussen-semibold";
+  /* src: url("/assets/fonts/slussen/Slussen-Bold-TRIAL.otf") format("opentype"); */
+  src: url("../fonts/slussen/Slussen-Extended-Black-TRIAL.otf")
+    format("opentype");
+
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Slussen-bold";
+  /* src: url("/assets/fonts/slussen/Slussen-Bold-TRIAL.otf") format("opentype"); */
+  src: url("../fonts/slussen/Slussen-Condensed-Black-TRIAL.otf")
+    format("opentype");
+
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Cloister";
+  src: url("../fonts/cloister/CloisterBlack.ttf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Krona";
+  src: url("../fonts/Krona/KronaOne-Regular.ttf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "fraktur";
+  src: url("/assets/fonts/UnifrakturCook/UnifrakturCook-Bold.ttf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "playflair";
+  src: url("../fonts/playflair/static/PlayfairDisplay-Bold.ttf")
+    format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  /* scroll-behavior: smooth; */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  /* background-color: var(--background); */
+  background-color: #000;
+  color: var(--foreground);
+  font-family: var(--font-primary), Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "";
+  overflow-x: hidden;
+  /* line-height: 1.5; */
+}
+::selection {
+  color: #000;
+  background: #ff98a2;
+}
+
+h1 {
+  font-family: "Cloister", sans-serif;
+}
+/* .primary-btn {
+    height: 3.4vw;
+    min-width: 50vh;
+    padding: 0.2vh;
+    cursor: pointer;
+    text-transform: uppercase;
+    display: flex;
+    color: var(--font-dark);
+    background-color: var(--btn-bg-pink);
+    width: auto;
+}
+.primary-btn:hover {
+    background-color: var(--font-light);
+    color: var(--font-dark);
+} */
+.primary-btn {
+  position: relative;
+  height: 3.4vw;
+  min-width: 50vh;
+  padding: 0.2vh;
+  cursor: pointer;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--font-dark);
+  background-color: var(--btn-bg-pink);
+  width: auto;
+  overflow: hidden;
+  transition: color 0.2s ease;
+}
+
+.primary-btn::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: var(--font-light);
+  z-index: 0;
+  transition: height 0.4s ease;
+}
+
+.primary-btn:hover::before {
+  height: 100%;
+}
+
+.primary-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-icon {
+  position: relative;
+  aspect-ratio: 1/1;
+  min-height: 100%;
+  max-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 4vh;
+  /* padding: 10px; */
+  color: var(--white);
+  background-color: var(--black);
+}
+.btn-icon svg {
+  aspect-ratio: 1/1;
+  min-height: 70%;
+  min-width: 70%;
+  /* max-height: 80%; */
+}
+.button-area {
+  position: relative;
+}
+
+.button-area p {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 100%;
+  font-family: "Slussen";
+  font-size: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7vw;
+  font-weight: 800;
+}
+
+.pink-bottom-shade {
+  position: fixed;
+  left: 0;
+  background: linear-gradient(
+    var(--black-transparent),
+    #ff98a217,
+    var(--pink-transparent)
+  );
+  right: 0;
+  height: 200px;
+  bottom: 0vw;
+  width: 100%;
+}

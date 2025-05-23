@@ -1,103 +1,56 @@
-import Image from "next/image";
+import HomePage from "@/components/Home";
+import About from "@/components/About";
+import Work from "@/components/Work";
+import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
+import Contact from "@/components/Contact";
+import ContactDetails from "@/components/ContactDetails";
+import Home2 from "@/components/Home2";
+import ScrollProgress from "@/components/ScrollProgress";
+// import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="relative">
+      <div className="pink-bottom-shade"></div>
+      {/* 
+<section className="home-section-wrapper">
+      <Home2/>
+      </section> */}
+      <ScrollProgress />
+      <section className="home-section-wrapper">
+        <HomePage />
+      </section>
+      <section className="">
+        <About />
+      </section>
+      <section className="">
+        <Projects />
+      </section>
+      <section className="">
+        <Contact />
+      </section>
+      <section className="">
+        <ContactDetails />
+      </section>
+      {/*       
+      <section className="section bg-red-200">
+        <Skills />
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+   <section className="section  bg-blue-300">
+        <Work />
+      </section> */}
+    </main>
   );
 }
+
+//  {/* <div className="w-[200px] h-[200px]">
+//         <svg viewBox="0 0 1144 335" className="w-full h-full">
+//           <path
+//             style={{ "--index": 5 }}
+//             className="intro_start__mFloY"
+//             d="M1113.42 269.237L1112.71 268.522L1109.08 272.147C1105.68 275.544 1101.08 277.453 1096.27 277.455H1001.08C1000.09 277.454 999.114 277.159 998.286 276.607C997.459 276.054 996.813 275.268 996.432 274.349C996.051 273.43 995.95 272.419 996.143 271.442C996.336 270.466 996.814 269.569 997.517 268.864L1058.43 207.955L1057.72 207.24L1050.55 214.411C1050.13 214.833 1049.59 215.12 1049 215.236C1048.42 215.353 1047.81 215.293 1047.26 215.064C1046.71 214.836 1046.24 214.449 1045.9 213.953C1045.57 213.456 1045.39 212.873 1045.39 212.275V64.0312L1051.8 57.616H1087.5V57.5556L1144.08 0.977083L1143.36 0.261963L1140.23 3.40409C1138.55 5.08727 1136.55 6.42236 1134.35 7.33301C1132.15 8.24366 1129.79 8.71205 1127.41 8.7115H927.413L870.311 65.8339L871.026 66.549L874.49 63.1349C877.874 59.7945 882.434 57.9174 887.189 57.908L977.113 57.757C978.109 57.7553 979.083 58.0488 979.912 58.6008C980.741 59.1527 981.388 59.9382 981.771 60.8577C982.154 61.7773 982.255 62.7896 982.062 63.7668C981.869 64.744 981.391 65.6421 980.688 66.3475L920.605 126.431L921.32 127.146L928.43 120.026C928.853 119.603 929.392 119.315 929.979 119.199C930.566 119.083 931.174 119.144 931.726 119.374C932.278 119.604 932.749 119.992 933.08 120.49C933.412 120.988 933.588 121.573 933.586 122.171V270.073L926.194 277.455H895.438L837.58 334.698L838.295 335.413L841.316 332.392C844.701 329.045 849.266 327.164 854.026 327.155H1055.98L1113.42 269.237ZM990.729 57.747L1038.15 57.6663C1039.15 57.6665 1040.12 57.9616 1040.95 58.5143C1041.78 59.067 1042.42 59.8525 1042.8 60.7717C1043.18 61.6908 1043.28 62.7024 1043.09 63.6786C1042.9 64.6549 1042.42 65.5521 1041.72 66.2569L992.531 115.453C991.827 116.159 990.929 116.641 989.951 116.836C988.973 117.031 987.959 116.931 987.038 116.549C986.117 116.167 985.33 115.52 984.777 114.691C984.223 113.861 983.929 112.886 983.931 111.888V64.5549L990.729 57.747ZM983.931 125.464L995.009 114.386V208.67L983.931 219.748V125.464ZM986.449 218.701C987.152 217.995 988.049 217.514 989.026 217.319C990.003 217.124 991.017 217.223 991.937 217.603C992.858 217.984 993.645 218.629 994.199 219.457C994.753 220.285 995.049 221.259 995.049 222.256V269.922L987.496 277.475H939.81C938.815 277.475 937.842 277.179 937.015 276.627C936.187 276.074 935.542 275.289 935.161 274.369C934.779 273.45 934.678 272.439 934.871 271.462C935.064 270.486 935.542 269.589 936.245 268.884L986.449 218.701Z"
+//           />
+//         </svg>
+//       </div> */}
