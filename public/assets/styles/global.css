@@ -9,23 +9,30 @@
   --grey-transparent: hsla(0, 0%, 69%, 0.035);
   --black: #000;
   --black-transparent: transparent;
-  --primary-color: #ff98a2;
+  /* --primary-color: #ff98a2; */
+  --primary-color:#ff98a2        ;
   --secondary-color: #000;
-  --pink: rgb(255, 152, 162);
+  /* --pink: #ff98a2; */
+  --pink:#006241;
   --pink-transparent: rgba(255, 152, 162, 0.138);
   --background: var(--black);
   --foreground: var(--white);
-
+  --primary-gradient-1: rgb(255, 107, 107);
+  --primary-gradient-2: rgba(0, 98, 65, 0.573);
+  --primary-gradient-3: rgba(0, 98, 65, 0.307);
+  --primary-gradient-4: rgba(0, 98, 65, 0.148);
+  
   --font-dark: #000;
   --font-light: #efefef;
-  --btn-bg-pink: #ff98a2;
+  /* --btn-bg-pink: #ff98a2; */
+    --btn-bg-pink:#ff98a2       ;
   --btn-bg-white: #efefef;
 }
 
 /* Dark mode support */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: var(--pink);
+    --background: var(--primary-color);
     --foreground: #ededed;
   }
 }
@@ -144,7 +151,8 @@ body {
 }
 ::selection {
   color: #000;
-  background: #ff98a2;
+  background: var(--primary-color)
+  ;
 }
 
 h1 {

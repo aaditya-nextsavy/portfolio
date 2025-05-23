@@ -49,7 +49,10 @@ const Home = () => {
     // gsap.set(moveUpRef.current, { zIndex: 3 });
 
     // Initial setup
-    gsap.set(".home-wrapper", { backgroundColor: "#ff98a2", width: "100%" });
+    gsap.set(".home-wrapper", { 
+      // backgroundColor: "#ff98a2",
+      background:"var(--primary-color)",
+       width: "100%" });
     gsap.set(spansRef.current, { color: "#000", y: 400, opacity: 0 });
     // Step 1: Even letters slide up
     gsap.set(moveUpRef.current, { zIndex: 0 });
@@ -117,7 +120,10 @@ const Home = () => {
       "<0.11" // Starts at the same time as Step 3
     );
 
-    tl.to(spansRef.current, { color: "#ff98a2", duration: 0.3 }, "<0.31");
+    tl.to(spansRef.current, { 
+      // color: "#ff98a2", 
+      color:"var(--primary-color)",
+      duration: 0.3 }, "<0.31");
 
     // Step 5: Odd letters fade out at the end of moveUpRef animation
     tl.to(

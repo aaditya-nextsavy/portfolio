@@ -41,14 +41,14 @@
   align-items: end;
   gap: 14vw;
   text-transform: uppercase;
-  color: var(--pink);
+  color: var(--primary-color);
   /* letter-spacing: 20px; */
   font-size: 18vw;
   font-family: "Cloister";
   top:0;
   padding-left: 1vw;
   bottom: 0;
-  background-color: #ff98a2;
+  background-color: var(--primary-color);
   z-index:2;
   transform: translateY(0px);
 }
@@ -63,7 +63,7 @@
 }
 .home-title h1 {
   text-transform: uppercase;
-  color: var(--pink);
+  color: var(--primary-color);
   /* letter-spacing: 20px; */
   font-size: 18vw;
   /* transform: scaleY(1.3); */
@@ -131,7 +131,7 @@
   bottom: 0;
   width: 0.2vw;
   height: 100%;
-  background-color: var(--pink);
+  background-color: var(--primary-color);
 }
 
 .name-row {
@@ -162,7 +162,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: #ff98a2;
+  /* background: #ff98a2; */
+  background:var(--primary-color);
   width: 100vw;
   height: 100vh;
   z-index: 9;

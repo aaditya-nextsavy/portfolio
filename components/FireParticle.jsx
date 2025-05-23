@@ -46,9 +46,9 @@ export default function FireParticles() {
         p.y,
         p.radius * 2
       );
-      gradient.addColorStop(0, "rgba(255, 152, 162, 0.9)");
-      gradient.addColorStop(0.5, "rgba(255, 152, 162, 0.5)");
-      gradient.addColorStop(1, "rgba(255, 152, 162, 0)");
+      gradient.addColorStop(0, "rgba(255, 107, 107, 0.9)");
+      gradient.addColorStop(0.5, "rgba(255, 107, 107, 0.5)");
+      gradient.addColorStop(1, "rgba(255, 107, 107, 0)");
 
       ctx.beginPath();
       ctx.fillStyle = gradient;
